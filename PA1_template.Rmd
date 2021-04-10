@@ -25,6 +25,7 @@ steps_day <- aggregate(steps ~ date, da, sum)
 Creates the histogram:
 ```{r }
 hist (steps_day$steps, main="Total number of steps per day", col="red", xlab="Number of steps")
+ggsave("./instructions_fig/plot1.png")
 ```
 
 Reporting the mean and median:
@@ -43,6 +44,7 @@ g + geom_line() +
       labs(x="5-minute interval", y = "Steps (mean)") +
       labs(title = "Daily activity pattern") +
       theme_minimal()
+ggsave("./instructions_fig/plot2.png")
 ```
 
 The interval with the maximum of steps is:
@@ -73,6 +75,7 @@ g <- ggplot(data = da2, aes(steps))
 g + geom_histogram(bins = 30, col="green") +
       labs("Histogram of daily steps with no NA")
 hist (da2$steps, main="Total number of steps per day", col="orange", xlab="Number of steps")
+ggsave("./instructions_fig/plot3.png")
 ```
 
 # 4. Are there differences in activity patterns between weekdays and weekends?
@@ -92,6 +95,7 @@ g + facet_wrap(.~ww2, ncol=1, nrow=2) +
       labs(x = "Interval", y= "Average number of steps") +
       labs(title = "Average daily steps during weekend/weekdays") +
       scale_colour_discrete(name="Days", labels=c("Weekend", "Weekdays"))
+ggsave("./instructions_fig/plot4.png")
 ```
       
       
