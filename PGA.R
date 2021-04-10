@@ -1,5 +1,6 @@
 # Peer graded assignment
-
+install.packages('knitr', repos = c('http://rforge.net', 'http://cran.rstudio.org'),
+                 type = 'source')
 library(ggplot2)
 
 setwd("D:/Trabajo (3)/Métodos/R courses/Curso 5 DSE - Reproducible research/PGA1")
