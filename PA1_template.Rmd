@@ -36,7 +36,7 @@ median(steps_day$steps)
 ```
 
 
-#2. What is the average daily activity pattern?
+# 2. What is the average daily activity pattern?
 Making the time series plot for 5-minute interval
 ```{r }
 steps_interval <- aggregate(steps ~ interval, da, mean)
@@ -57,13 +57,13 @@ max_interval
 # 3. Imputing missing values
 Calculate and report the total number of missing values in the dataset
 
-##Total missing values:
+## Total missing values:
 ```{r }
 na <- sum(!complete.cases(da))
 na
 ```
 
-##Imputing missing values for NA:
+## Imputing missing values for NA:
 ```{r }
 da$steps[is.na(da$steps) == T] <- mean(da$steps, na.rm = T)
 sum(is.na(da$steps))
